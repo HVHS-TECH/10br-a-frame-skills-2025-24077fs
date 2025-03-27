@@ -2,12 +2,32 @@
 <html>
     <head>
         <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-        <title>Radioactive Signals</title>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script> 
+        <title>Scene</title>
     </head>
     <body>
         <a-scene>
+
+
             <!-- Set the sky -->
-            <a-sky color="black"></a-sky>
+            <a-sky src="skything.png" color="lightblue"></a-sky>
+            
+            <a-entity 
+            ply-model="src:Car.ply"
+            position="0 -2 -4"
+            rotation="-90 0 0"
+            
+            animation="
+                    property:position;
+                    from: 0 -2 4;
+                    to: 0 -2 -4;
+                    loop:true;
+                    dir:alternate;
+                    "
+            
+            ></a-entity>
+
+            <a-plane position=" 0 -2.0001 0" color="black" rotation="-90 0 0" scale="500 500 500"></a-plane>
 
         </a-scene>
     </body>
